@@ -1,0 +1,41 @@
+<h1>Users List</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>{{ 'id.' | titlecase }}</th>
+      <th>{{ 'name' | titlecase }}</th>
+      <th>{{ 'username' | titlecase }}</th>
+      <th>{{ 'email' | titlecase }}</th>
+      <th>{{ 'website' | titlecase }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; trackBy: trackByFn" (click)="menuOpen(user, menuTemplate, $event)">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.website}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #menuTemplate let-user="user">
+  <div>
+
+    <button class="btn btn-light" (click)="goToDetails(user.id)">
+      Details
+    </button>
+
+    <button class="btn btn-light" (click)="deleteUser(user.id)">
+      <ng-container *ngIf="deletingProcessing">
+        Deleting...
+      </ng-container>
+      <ng-container *ngIf="!deletingProcessing">
+        Delete
+      </ng-container>
+    </button>
+
+  </div>
+</ng-template>

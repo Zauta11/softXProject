@@ -1,0 +1,46 @@
+.error-line {
+    background-color: rgb(247, 154, 154);
+    padding: 10px 0px 1px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  
+  }
+  
+  .signin {
+    width: 600px;
+    height: min-content;
+  
+    .signin-container {
+      border: 1px solid gray;
+      border-radius: 5px;
+  
+    }
+  }
+  
+  form {
+    padding: 20px;
+  }
+  
+  .signin form {
+    font-size: 15px;
+  }
+  
+  .form-header {
+    color: black;
+    background-color: rgb(202, 202, 202);
+    padding: 10px 10px 10px 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .form-group button {
+    padding: 10px;
+  }
+  
+  input {
+    padding: 5px;
+    margin-top: 10px;
+  }
+  

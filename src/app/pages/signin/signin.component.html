@@ -1,0 +1,70 @@
+<div class="d-flex flex-sm-row flex-column justify-content-center">
+    <div class="align-self-lg-center">
+        <div class="signin">
+            <div class="error-line" *ngIf="isSubmit && form.invalid">
+                <p>Username or Password is incorrect!</p>
+            </div>
+            <div class="signin-container">
+            <div class="form-header col">
+                <h3>Angular Sign In</h3>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group col-12">
+                    <label for="username">Username</label>
+                    <input
+                      formControlName="username"
+                      [ngClass]="{
+                        'is-invalid': userNameControl.invalid && userNameControl.touched
+                      }"
+                      type="text"
+                      class="form-control"
+                      placeholder="username: admin"
+                    />
+                    <small
+                      *ngIf="userNameControl.touched && userNameControl.errors as errors"
+                      class="invalid-feedback"
+                    >
+                      <span *ngIf="errors?.['required']">
+                        Username is required
+                      </span>
+                      <span *ngIf="errors?.['notMatch']">
+                        Username should be: 'admin'
+                      </span>
+                    </small>
+                </div>
+
+                <div class="form-group col-12">
+                    <label for="password">Password</label>
+                    <input
+                      formControlName="password"
+                      [ngClass]="{'is-invalid': passwordControl.invalid && passwordControl.touched}"
+                      type="password"
+                      class="form-control"
+                      placeholder="password: admin"
+                    />
+                    <small
+                      *ngIf=" passwordControl.touched && passwordControl.errors as errors"
+                      class="invalid-feedback"
+                    >
+                      <span *ngIf="errors?.['required']">
+                        Password is required
+                      </span>
+                      <span *ngIf="errors?.['notMatch']">
+                        Password should be: 'admin'
+                      </span>
+                    </small>
+                </div>
+
+                <div class="form-group" >
+                    <button
+                      [disabled]="!form.touched"
+                      class="btn btn-primary"
+                      (click)="onSubmit()"
+                    >
+                      Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

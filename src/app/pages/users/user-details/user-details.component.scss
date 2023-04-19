@@ -1,0 +1,35 @@
+
+.card {
+    width: 350px;
+    background-color: white;
+    box-shadow: 5px 5px #dddddd;
+    background-image: url('../../../../assets/received_655190985068488.jpg');
+    padding-bottom: 200px !important;
+}
+
+.avatar-contianer {
+  width: 140px;
+  height: 140px;
+  border: 2px solid white;
+  color: white;
+  background-color: rgb(25, 48, 255);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+}
+
+.name {
+    color: white;
+    font-size: 32px;
+}
+
+
+.email {
+    color: white;
+    font-size: 15px
+}
+
+
+
